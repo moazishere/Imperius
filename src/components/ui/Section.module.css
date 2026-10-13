@@ -1,0 +1,6 @@
+.head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px 64px; align-items: end; margin-bottom: clamp(40px, 6vw, 72px); }
+.head .lead { margin: 0; }
+
+@media (max-width: 960px) {
+  .head { grid-template-columns: minmax(0, 1fr); }
+}

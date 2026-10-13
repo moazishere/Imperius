@@ -1,0 +1,11 @@
+.problem { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(40px, 6vw, 96px); align-items: center; }
+.list { margin: 32px 0 0; padding: 0; list-style: none; display: grid; gap: 0; border-top: 1px solid var(--line); }
+.list li { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 16px; padding-block: 16px; border-bottom: 1px solid var(--line); font-size: 16px; color: var(--soft); }
+.list b { font-weight: 500; color: var(--ink); }
+
+@media (max-width: 960px) {
+  .problem { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 780px) {
+  .list li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+}

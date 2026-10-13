@@ -1,0 +1,9 @@
+.cases { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.case { display: grid; gap: 16px; align-content: start; padding: 28px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); }
+.case p { margin: 0; color: var(--soft); line-height: 1.6; }
+.q { display: block; quotes: none; padding: 14px 16px; border-radius: 4px; background: var(--tint); font-family: var(--mono); font-size: 13px; line-height: 1.55; color: var(--ink); }
+.q:global(.ar) { font-family: var(--arabic); font-size: 15px; }
+
+@media (max-width: 960px) {
+  .cases { grid-template-columns: minmax(0, 1fr); }
+}

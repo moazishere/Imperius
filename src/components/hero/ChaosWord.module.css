@@ -1,0 +1,7 @@
+.chaos { display: inline-block; white-space: nowrap; }
+.chaos span { display: inline-block; transform: translate(var(--tx), var(--ty)) rotate(var(--r)); transition: transform 1.55s cubic-bezier(.65, 0, .35, 1) .2s; }
+.settled span { transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .chaos span { transition: none; transform: none; }
+}

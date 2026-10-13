@@ -1,0 +1,13 @@
+.roadmap { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--ink); }
+.roadmap li { display: grid; grid-template-columns: 72px minmax(0, 1.1fr) minmax(0, 1fr) 132px; gap: 16px 24px; align-items: baseline; padding-block: 20px; border-bottom: 1px solid var(--line); }
+.roadmap span { color: var(--soft); }
+.roadmap .v { font-family: var(--mono); font-size: 13px; color: var(--muted); }
+.roadmap b { font-weight: 500; font-size: 19px; letter-spacing: -0.01em; }
+.roadmap .status { justify-self: end; }
+.roadmap li.now b, .roadmap li.now .v { color: var(--ink); }
+
+@media (max-width: 780px) {
+  .roadmap li { grid-template-columns: 52px minmax(0, 1fr); }
+  .roadmap li > span:not(.status) { grid-column: 2; }
+  .roadmap .status { grid-column: 2; justify-self: start; }
+}
