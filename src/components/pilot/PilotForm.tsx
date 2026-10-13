@@ -14,17 +14,16 @@ export function PilotForm() {
   const [dismissed, setDismissed] = useState<string | null>(null);
   const sentRef = useRef<HTMLDivElement>(null);
   const nameRef = useRef<HTMLInputElement>(null);
-  const mounted = useRef(false);
+  const wasSent = useRef(false);
 
   const sent = state.status === "sent" && state.id !== dismissed;
   const values = state.status === "invalid" || state.status === "error" ? state.values : undefined;
 
-  // Move focus to whichever panel just appeared.
+  // Move focus to whichever panel just appeared, but only when it actually switches
+  // (never on first load, or the page would scroll down to the form).
   useEffect(() => {
-    if (!mounted.current) {
-      mounted.current = true;
-      return;
-    }
+    if (sent === wasSent.current) return;
+    wasSent.current = sent;
     if (sent) sentRef.current?.focus();
     else nameRef.current?.focus();
   }, [sent]);
